@@ -2,6 +2,9 @@ name: Build NeoForge Jar
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "1.21.1"
 
 jobs:
   build:
