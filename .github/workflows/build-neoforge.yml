@@ -19,11 +19,13 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Make Gradle executable
-        run: chmod +x ./gradlew
+      - name: Confirm Java version
+        run: java -version
 
       - name: Build NeoForge jar
-        run: ./gradlew :neoforge:build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew :neoforge:build
 
       - name: Remove bad NeoForge refmap if present
         run: |
